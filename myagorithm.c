@@ -47,3 +47,11 @@ double sqrt2(double Num,double error)
 	}while(diff>error);
 	return guess;
 }
+/*
+**
+**
+*/
+char ispower2(int num)
+{
+	return ((num&(num-1)==0) && num>0);
+}
