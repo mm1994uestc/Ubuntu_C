@@ -38,5 +38,10 @@ int main(void)
 	strcpy(Str,p);//Those function operation directly on the adress.
 	strcat(Str,q);
 	printf("The string cat is:%s\n",Str);
+	int Len=0;
+	char s[10]={'0'};
+	Len=getlines(s,10);
+	puts(s);
+	printf("The length of the string is equal:%d",Len);
 	return 0;
 }

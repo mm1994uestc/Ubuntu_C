@@ -1,3 +1,4 @@
+#include "myagorithm.h"
 /*
 ** function: double plyv(double co,int n,double x)
 ** func is: p(x)=A1*x^nA2*x^(n-1)+...+A(n-1)*x^1+An.
@@ -48,10 +49,30 @@ double sqrt2(double Num,double error)
 	return guess;
 }
 /*
-**
-**
+** num
+** return
 */
 char ispower2(int num)
 {
 	return ((num&(num-1)==0) && num>0);
+}
+/*
+** function:
+** s[]
+** limit
+*/
+int getlines(char s[],int limit)
+{
+	int i=0,c=getchar();
+	do{
+		if(c!='\n' && c!=EOF){
+			s[i++]=c;
+		}
+		c=getchar();
+		if(c=='\n' || c==EOF){
+			break;
+		}
+	}while(i<limit);
+	s[i]='\0';
+	return i;
 }
