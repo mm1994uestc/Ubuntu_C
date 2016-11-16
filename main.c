@@ -43,5 +43,9 @@ int main(void)
 	Len=getlines(s,10);
 	puts(s);
 	printf("The length of the string is equal:%d",Len);
+	
+	char String[20];
+	scanf("%s",String);
+	printf("%s",String);
 	return 0;
 }
