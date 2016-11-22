@@ -50,17 +50,18 @@ double sqrt2(double Num,double error)
 	return guess;
 }
 /***********************************************************************
-** num
-** return
+** function: char ispower2(int num)
+** num is a number you want to test whether it is the result of pow(2,n).
+** The return of the function shows whether the number is the power of 2.
 ***********************************************************************/
 char ispower2(int num)
 {
 	return ((num&(num-1)==0) && num>0);
 }
 /***********************************************************************
-** function:
-** s[]
-** limit
+** function: int getlines(char s[],int limit)
+** s[] is the array you except to storage the input of the Keyboard.
+** limit is the length of the array'space apply with command malloc.
 ***********************************************************************/
 int getlines(char s[],int limit)
 {
@@ -78,9 +79,13 @@ int getlines(char s[],int limit)
 	return i;
 }
 /***********************************************************************
-**
-**
-**
+** function: void cmul(double R1,double I1,double R2,double I2,double *R_res,double *I_res).
+** R1 is the real part of complex number1.
+** I1 is the imag part of complex number1.
+** R2 is the real part of complex number2.
+** I2 is the imag part of complex number2.
+** R_res is the real part calculate by two complex numbers: real(Number1*Number2).
+** I_res is the real part calculate by two complex numbers: imag(Number1*Number2).
 ***********************************************************************/
 void cmul(double R1,double I1,double R2,double I2,double *R_res,double *I_res)
 {
@@ -111,8 +116,8 @@ void cpow(double R,double I,int N,double *R_res,double *I_res)
 	*I_res=d*sin(Theta*N);
 }
 /**********************************************************************
-**
-**
+** Most bad conditions make the time complex to be O(N*logN)
+** Fast array sort Function!
 **********************************************************************/
 void fastsort(double array[],int n)
 {
@@ -140,3 +145,4 @@ int middle_index(double array[],int len)
 	array[P1]=prov;
 	return P1;
 }
+
