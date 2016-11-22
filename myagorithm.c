@@ -30,6 +30,7 @@ double pown(double Num,int N)
 	{
 		Res*=Num;
 	}
+	return Res;
 }
 /***********************************************************************
 ** function: double sqrt2(double Num,double erroe=0.001)
@@ -95,4 +96,47 @@ void cdiv(double R1,double I1,double R2,double I2,double *R_res,double *I_res)
 	double Div=R2*R2+I2*I2;
 	*R_res=(R1*R2+I1*I2)/Div;
 	*I_res=(I1*R2-R1*I2)/Div;
+}
+/***********************************************************************
+**
+**
+***********************************************************************/
+void cpow(double R,double I,int N,double *R_res,double *I_res)
+{
+	double d=0.0,r=0.0,Theta=0.0;
+	r=sqrt(R*R+I*I);
+	d=pown(r,N);
+	Theta=atan2(I,R);
+	*R_res=d*cos(Theta*N);
+	*I_res=d*sin(Theta*N);
+}
+/**********************************************************************
+**
+**
+**********************************************************************/
+void fastsort(double array[],int n)
+{
+	int boundary=0;
+	if(n<2) return;
+	boundary=middle_index(array,n);
+	fastsort(array,boundary);
+	fastsort(array+boundary+1,n-boundary-1); 
+}
+int middle_index(double array[],int len)
+{
+	int P1=0,P2=len-1;
+	double prov=array[0],temp=0.0;
+	while(1)
+	{
+		while(P1<P2 && array[P2]>=prov) P2--;
+		while(P1<P2 && array[P1]<=prov) P1++;
+		if(P1==P2) break;
+		temp=array[P1];
+		array[P1]=array[P2];
+		array[P2]=temp;
+	}
+	if(array[P1]>=prov) return 0;
+	array[0]=array[P1];
+	array[P1]=prov;
+	return P1;
 }
