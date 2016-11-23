@@ -116,6 +116,54 @@ void cpow(double R,double I,int N,double *R_res,double *I_res)
 	*I_res=d*sin(Theta*N);
 }
 /**********************************************************************
+**
+** sqrt(complex number)
+**********************************************************************/
+void csqrtn(double x,double y,int n,double u[],double v[])
+{
+	int k;
+	double r,q,t;
+	if(n<1) return ;
+	q=atan2(y,x);
+	r=sqrt(x*x+y*y);
+	if(r+1.0!=1.0)
+	{
+		r=(1.0/n)*log(r);
+		r=exp(r);
+	}
+	for(k=0;k<=n-1;k++)
+	{
+		t=(2.0*k*3.1415926+q)/n;
+		u[k]=r*cos(t);
+		v[k]=r*sin(t);
+	}
+	return ;
+}
+/**********************************************************************
+**
+** exp(complex number)
+**********************************************************************/
+void cexp(double x,double y,double *u,double *v)
+{
+	double p;
+	p=exp(x);
+	*u=p*cos(y);
+	*v=p*sin(y);
+	return ;
+}
+/**********************************************************************
+**
+** ln(complex number)
+**********************************************************************/
+void clog(double x,double y,double *u,double *v)
+{
+	double p;
+	p=log(sqrt(x*x+y*y));
+	*u=p;
+	*v=atan2(y,x);
+	return ;
+}
+/**********************************************************************
 ** Most bad conditions make the time complex to be O(N*logN)
 ** Fast array sort Function!
 **********************************************************************/
@@ -145,4 +193,3 @@ int middle_index(double array[],int len)
 	array[P1]=prov;
 	return P1;
 }
-
