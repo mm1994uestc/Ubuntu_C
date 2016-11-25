@@ -17,4 +17,6 @@ void cexp(double x,double y,double *u,double *v);
 void clog(double x,double y,double *u,double *v);
 int middle_index(double array[],int len);
 void fastsort(double array[],int n);
+void swap(double *N1,double *N2);
+void altesort(double array[],int n);
 #endif

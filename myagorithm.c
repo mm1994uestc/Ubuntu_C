@@ -193,3 +193,25 @@ int middle_index(double array[],int len)
 	array[P1]=prov;
 	return P1;
 }
+/***********************************************************************
+**
+**
+***********************************************************************/
+void altesort(double array[],int n)
+{
+	int i=0,j=0;
+	for(i=0;i<n;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(array[i]>array[j]) swap(&array[i],&array[j]);
+		}
+	}
+}
+void swap(double *N1,double *N2)
+{
+	double temp=0.0;
+	temp=*N1;
+	*N1=*N2;
+	*N2=temp;
+}

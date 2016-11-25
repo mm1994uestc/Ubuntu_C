@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "myagorithm.h"
+#include "mystack.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -24,5 +25,26 @@ int main(void)
 		printf("%lf ",array[i]);
 	}
 	printf("\n");
+	double array1[13]={1,2,1,3,5,3,2,5,3,3,1,3,1};
+	altesort(array1,13);
+	for(i=0;i<13;i++)
+	{
+		printf("%lf ",array1[i]);
+	}
+	printf("\n");
+	StackType A;
+	A=NewStack();
+	double j=0;
+	printf("The data we pushed into the ADT is:");
+	for(j=0;j<=1;j+=0.1)
+	{
+		push(A,j);
+		printf("%lf\n",j);
+	}
+	printf("\n");
+	printf("The value with index=2 is:%lf\n",GetStackValue(A,2));
+	j=pop(A);
+	printf("The data we poped is:%lf\n",j);
+	printf("The Depth of the Stack is:%d\n",StackDepth(A)); 
 	return 0;
 }
