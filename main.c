@@ -46,5 +46,14 @@ int main(void)
 	j=pop(A);
 	printf("The data we poped is:%lf\n",j);
 	printf("The Depth of the Stack is:%d\n",StackDepth(A)); 
+	
+	char *str = "Hello World!";
+	int time=0;
+	time=symbolcount(str,'l');
+	printf("The symbol 'l' come out %d times.\n",time);
+
+	char chr;
+	chr=symbolget(str,3);
+	printf("The symbol with index=3 is:%c\n",chr);
 	return 0;
 }

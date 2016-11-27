@@ -215,3 +215,29 @@ void swap(double *N1,double *N2)
 	*N1=*N2;
 	*N2=temp;
 }
+/***********************************************************************
+**
+**
+***********************************************************************/
+int symbolcount(char str[],char sym)
+{
+	int count=0,i=0;
+	for(i=0;i<strlen(str);i++)
+	{
+		if(str[i]==sym) count+=1;
+	}
+	return count;
+}
+/***********************************************************************
+**
+**
+***********************************************************************/
+char symbolget(char str[],int index)
+{
+	if(index<0 || index>strlen(str)) 
+	{
+		printf("Wrong index input!");
+		return -1;
+	}
+	return str[index];
+}
