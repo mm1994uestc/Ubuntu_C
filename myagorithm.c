@@ -241,3 +241,28 @@ char symbolget(char str[],int index)
 	}
 	return str[index];
 }
+/***********************************************************************
+**
+**
+***********************************************************************/
+char * symbolrep(char str[],int index,char Temp)
+{
+	str[index]=Temp;
+	return str;
+}
+/***********************************************************************
+**
+**
+***********************************************************************/
+char * symbolappend(char str[],char app)
+{
+	int i,Len=strlen(str)+2;
+	char *Res=(char *)malloc(sizeof(char)*Len);
+	for(i=0;i<Len-2;i++)
+	{
+		*(Res+i)=str[i];
+	}
+	*(Res+Len-1)=app;
+	*(Res+Len)='\n';
+	return Res;
+}

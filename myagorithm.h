@@ -21,4 +21,6 @@ void swap(double *N1,double *N2);
 void altesort(double array[],int n);
 int symbolcount(char str[],char sym);
 char symbolget(char str[],int index);
+char * symbolrep(char str[],int index,char Temp);
+char * symbolappend(char str[],char app);
 #endif
