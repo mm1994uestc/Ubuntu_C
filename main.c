@@ -55,5 +55,10 @@ int main(void)
 	char chr;
 	chr=symbolget(str,3);
 	printf("The symbol with index=3 is:%c\n",chr);
+	while(1)
+	{
+		printf("Running!");
+		mdelay(1000);
+	}
 	return 0;
 }
