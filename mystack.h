@@ -4,7 +4,10 @@
 #include <stdlib.h>
 #include <string.h>
 typedef double element;
+typedef char bool;
 typedef struct StackADT * StackType;
+#define true 1
+#define false 0
 /****************************************************************************/
 StackType NewStack(void);
 element pop(StackType stack);

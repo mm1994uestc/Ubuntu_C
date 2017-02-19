@@ -3,6 +3,7 @@
 #include "mystack.h"
 #include <string.h>
 #include <stdlib.h>
+//#include <linux/delay.h>
 
 int main(void)
 {
@@ -55,10 +56,11 @@ int main(void)
 	char chr;
 	chr=symbolget(str,3);
 	printf("The symbol with index=3 is:%c\n",chr);
+	printf("Running!\n");
 	while(1)
 	{
-		printf("Running!");
-		mdelay(1000);
+		//printf("Running!");
+		//mdelay(1000);
 	}
 	return 0;
 }
